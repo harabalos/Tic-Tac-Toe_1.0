@@ -10,5 +10,33 @@ def display_board(board):
     print('     |', '    ', '|')
 
 
-test = ['#', 'X', 'X', 'O', 'X', 'O', 'O', 'X', 'O', 'X']
-display_board(test)
+def player_input():
+    choice = 'wrong'
+    correct_items = ['X', 'x', 'O', 'o']
+    while choice not in correct_items:
+        choice = input('Please enter X or O: ')
+        if choice not in correct_items:
+            print('You can only enter X or O')
+    return choice
+
+
+def position_input():
+
+    position = 'wrong'
+    acceptable_range = range(1, 9)
+    within_range = False
+
+    while position.isdigit() == False or within_range == False:
+
+        position = input('Please enter a number between 1 - 9: ')
+        if position.isdigit == False:
+            print('Sorry that is not a digit')
+
+        if position.isdigit:
+            if int(position) in acceptable_range:
+                within_range = True
+            else:
+                print('Your are out of acceptable range (1-9)')
+                within_range = False
+
+    return int(position)
