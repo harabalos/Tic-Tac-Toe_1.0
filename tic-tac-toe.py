@@ -20,23 +20,18 @@ def player_input():
     return choice
 
 
-def position_input():
-
+def user_position():
     position = 'wrong'
     acceptable_range = range(1, 9)
     within_range = False
-
     while position.isdigit() == False or within_range == False:
-
         position = input('Please enter a number between 1 - 9: ')
-        if position.isdigit == False:
+        if position.isdigit() == False:
             print('Sorry that is not a digit')
-
-        if position.isdigit:
+        if position.isdigit() == True:
             if int(position) in acceptable_range:
                 within_range = True
             else:
                 print('Your are out of acceptable range (1-9)')
                 within_range = False
-
     return int(position)
